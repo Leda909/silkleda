@@ -7,4 +7,4 @@ Build with Bootstrap 4 wireframe for responsiveness + PHP + MySQL database.
     -Create pagination_class.php for PHP class (OOP PHP)
      Getters & Setters for $images, $sum_page, $current_page
     -Add Pagination() class to get_all_products function, also merge with $keyword selector, $page,
-    -Add Pagination() class to get_all_gallery function, also $page,
+    -Add Pagination() class to get_all_gallery function, also $page
