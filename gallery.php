@@ -1,7 +1,7 @@
 <?php
    include_once "header.php";
    include_once "data_model.php";
-   include_once "gallery_page.php";
+   include_once "pagination_class.php";
 
    if(isset($_GET['page'])){
          $page=$_GET['page'];
