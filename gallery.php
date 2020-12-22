@@ -63,7 +63,7 @@
          <!-- <a href="?page=galleries&current_page_number=<?php echo $total_number_of_pages; ?>">LAST</a> -->
       </div>
 
-      <div class="pag" style="margin-top: 15px;">
+      <!-- <div class="pag" style="margin-top: 15px;">
          <a class="btn_pag" href="?page=products&current_page_number=1">&laquo;</a> 
             <?php # Let's split our $total_number_of_pages using a for loop
                   for($i=1; $i <= $total_number_of_pages; $i++){
@@ -90,7 +90,7 @@
                      echo "&nbsp;<a class=$selected href=?page=products&current_page_number=$i>$i</a>&nbsp;";	  
                }?>
          <a href="?page=products&current_page_number=<?php echo $total_number_of_pages; ?>">&raquo;</a>
-      </div>
+      </div> -->
       
 </div>
 
