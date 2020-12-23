@@ -12,11 +12,11 @@ Build with Bootstrap 4 wireframe for responsiveness + PHP backend script + (SQL 
 
 External JavaScript files in Footer: (Links to them)
     
-    <!-- Latest jQuery library --> src="https://code.jquery.com/jquery-3.5.1.js"
-    <!-- Latest compiled JavaScript --> src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.js"
-    <!-- Latest compiled JavaScript --> src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.js"
+    src="https://code.jquery.com/jquery-3.5.1.js"
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.js"
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.js"
     
-    To "Isotope filter magical layouts" filter on Gallery page:
+    For "Isotope filter magical layouts" filter on Gallery page:
     src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.js
     scr="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"
     Also the bootsnippet JS added into custom_gallery.js
