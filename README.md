@@ -10,6 +10,19 @@ Build with Bootstrap 4 wireframe for responsiveness + PHP backend script + (SQL 
     - Web shop page; "Shop-homepage bootstrap template" (https://startbootstrap.com/template/shop-homepage)
     - Contact page; (https://bootsnipp.com/snippets/35VBm)
 
+External JavaScript files in Footer: (Links to them)
+    
+    <!-- Latest jQuery library --> src="https://code.jquery.com/jquery-3.5.1.js"
+    <!-- Latest compiled JavaScript --> src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.js"
+    <!-- Latest compiled JavaScript --> src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.js"
+    
+    To "Isotope filter magical layouts" filter on Gallery page:
+    src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.js
+    scr="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"
+    Also the bootsnippet JS added into custom_gallery.js
+
+    Download pagination.js from
+
 2. SQL database
 
     5 tables; (product, gallery, cart, contact, user)
