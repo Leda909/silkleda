@@ -71,28 +71,6 @@ function get_product_by_id($product_id){
     }  
 }
 
-# Here we fetch from "Gallery" table.
-function get_all_gallery(){
-
-    global $conn;
-    $sql = "SELECT * FROM gallery";
-
-    $result = mysqli_query($conn, $sql);
-
-    $products = [];
-
-    if(mysqli_num_rows($result)> 0){
-
-        while($row = mysqli_fetch_assoc($result)){
-                 array_push($products, $row);
-        }
-        return $products;
-
-    } else {
-        return false;
-    }
-}
-
 
 # -----------------------FETCH CART TABLE----------------------------#
 # If record for the product found in the database then 
