@@ -21,7 +21,7 @@ External JavaScript files in Footer: (Links to them)
     scr="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"
     Also the bootsnippet JS added into custom_gallery.js
 
-    Download pagination.js from
+    Download pagination.js from http://pagination.js.org
 
 2. SQL database
 
