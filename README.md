@@ -26,3 +26,13 @@ External JavaScript files in Footer: (Links to them)
 2. SQL database
 
     5 tables; (product, gallery, cart, contact, user)
+    
+Adding database pagination to Gallery and Webshop pages
+
+	-Create pagination_class.php for PHP class (OOP PHP) /Getters & Setters for $images, $sum_page, $current_page/
+
+	-Using Pagination class in get_all_products function for returning the results, 
+  -Add new parameters $keyword, $page, to get_all_products function,
+
+	-Using Pagination class in get_all_gallery function, 
+  -Add new parameter $page to get_all_gallery function,

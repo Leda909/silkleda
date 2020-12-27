@@ -1,56 +1,42 @@
 <?php 
 include_once "config.php";
+include_once "pagination_class.php";
 
-# Here we fetch from "Product" table.
-function get_all_products(){
+# Here we fetch from "Product" table to webshop page.
+function get_all_products($page, $keyword){
 
-        global $conn;
-        $sql = "SELECT * FROM product";
-
+      global $conn;
+		  $sql = "SELECT * FROM product";
+			if($keyword == "Mandala" || $keyword == "Picture"){
+				$sql = "SELECT * FROM product WHERE product_category='$keyword' ";
+			}
+		
+			if($keyword == "Window picture"  || $keyword == "Wall picture" | $keyword == "Sewn silk product"){
+				$sql = "SELECT * FROM product WHERE product_type='$keyword' ";
+			}
         $result = mysqli_query($conn, $sql);
 
         $products = [];
 
-        if(mysqli_num_rows($result)> 0){
-
+    if(mysqli_num_rows($result)> 0){
+			$index=0;
             while($row = mysqli_fetch_assoc($result)){
-
-                     array_push($products, $row);
-            }
-        
-            return $products;
-
+				if($index<6*$page && $index>=6*($page-1)){
+					array_push($products, $row);
+				}
+					$index++;
+				}
+				$gallery_page = new Pagination();
+				$gallery_page->set_images($products);
+				$gallery_page->set_current_page($page);
+				$gallery_page->set_sum_page(ceil($index/8));
+				return $gallery_page;
         } else {
             return false;
         }
 
 }
 
-# Here we select by KEY word for the searching boxes on the web shop side
-function get_products_by_keyword($keyword){
-    global $conn;
-
-    if($keyword == "Mandala" || $keyword == "Picture"){
-        $sql = "SELECT * FROM product WHERE product_category='$keyword' ";
-    }
-
-    if($keyword == "Window picture"  || $keyword == "Wall picture" | $keyword == "Sewn silk product"){
-        $sql = "SELECT * FROM product WHERE product_type='$keyword' ";
-    }
-   
-    $result = mysqli_query($conn, $sql);
-    $product = [];
-
-    if(mysqli_num_rows($result)> 0){
-    while($row = mysqli_fetch_assoc($result)){
-        array_push($product, $row);
-    }
-        return $product;
-
-    } else {
-        return false;
-    }
-}
 
 # Here we fetch from "Product" table to "Single product page"
 function get_product_by_id($product_id){
@@ -72,21 +58,35 @@ function get_product_by_id($product_id){
 }
 
 # Here we fetch from "Gallery" table.
-function get_all_gallery(){
+
+function get_all_gallery($page){
+
 
     global $conn;
     $sql = "SELECT * FROM gallery";
 
     $result = mysqli_query($conn, $sql);
 
-    $products = [];
+
+    $galleries = [];
 
     if(mysqli_num_rows($result)> 0){
 
+		$index=0;
         while($row = mysqli_fetch_assoc($result)){
-                 array_push($products, $row);
-        }
-        return $products;
+			// if($index>8){
+			// 	break;
+			// }
+			if($index<8*$page && $index>=8*($page-1)){
+				array_push($galleries, $row);
+			}
+				$index++;
+		}
+		$gallery_page = new Pagination();
+		$gallery_page->set_images($galleries);
+		$gallery_page->set_current_page($page);
+		$gallery_page->set_sum_page(ceil($index/8));
+        return $gallery_page;
 
     } else {
         return false;
