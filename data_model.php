@@ -5,8 +5,8 @@ include_once "pagination_class.php";
 # Here we fetch from "Product" table to webshop page.
 function get_all_products($page, $keyword){
 
-        global $conn;
-		$sql = "SELECT * FROM product";
+      global $conn;
+		  $sql = "SELECT * FROM product";
 			if($keyword == "Mandala" || $keyword == "Picture"){
 				$sql = "SELECT * FROM product WHERE product_category='$keyword' ";
 			}
@@ -15,10 +15,10 @@ function get_all_products($page, $keyword){
 				$sql = "SELECT * FROM product WHERE product_type='$keyword' ";
 			}
         $result = mysqli_query($conn, $sql);
+
         $products = [];
 
-        if(mysqli_num_rows($result)> 0){
-
+    if(mysqli_num_rows($result)> 0){
 			$index=0;
             while($row = mysqli_fetch_assoc($result)){
 				if($index<6*$page && $index>=6*($page-1)){
@@ -36,6 +36,7 @@ function get_all_products($page, $keyword){
         }
 
 }
+
 
 # Here we fetch from "Product" table to "Single product page"
 function get_product_by_id($product_id){
@@ -57,12 +58,15 @@ function get_product_by_id($product_id){
 }
 
 # Here we fetch from "Gallery" table.
+
 function get_all_gallery($page){
+
 
     global $conn;
     $sql = "SELECT * FROM gallery";
 
     $result = mysqli_query($conn, $sql);
+
 
     $galleries = [];
 
