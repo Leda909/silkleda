@@ -3,16 +3,16 @@ include_once "config.php";
 include_once "pagination_class.php";
 
 # Here we fetch from "Product" table to webshop page.
-function get_all_products($page, $keyword){
+function get_all_disabled_products($page, $keyword){
 
       global $conn;
-		  $sql = "SELECT * FROM product";
+		  $sql = "SELECT * FROM product WHERE disabled=0 ";
 			if($keyword == "Mandala" || $keyword == "Picture"){
-				$sql = "SELECT * FROM product WHERE product_category='$keyword' ";
+				$sql = "SELECT * FROM product WHERE disabled = 0 AND product_category='$keyword' ";
 			}
 		
 			if($keyword == "Window picture"  || $keyword == "Wall picture" | $keyword == "Sewn silk product"){
-				$sql = "SELECT * FROM product WHERE product_type='$keyword' ";
+				$sql = "SELECT * FROM product WHERE disabled = 0 AND product_type='$keyword' ";
 			}
         $result = mysqli_query($conn, $sql);
 
@@ -42,7 +42,7 @@ function get_all_products($page, $keyword){
 function get_product_by_id($product_id){
 
     global $conn;
-    $sql = "SELECT * FROM product WHERE product_id='$product_id' ";
+    $sql = "SELECT * FROM product WHERE disabled = 0 AND product_id='$product_id' ";
 
     $result = mysqli_query($conn, $sql);
 
@@ -59,11 +59,11 @@ function get_product_by_id($product_id){
 
 # Here we fetch from "Gallery" table.
 
-function get_all_gallery($page){
+function get_all_products($page){
 
 
     global $conn;
-    $sql = "SELECT * FROM gallery";
+    $sql = "SELECT * FROM product";
 
     $result = mysqli_query($conn, $sql);
 
@@ -106,8 +106,7 @@ function add_to_cart($product_id){
 		return false;
 		  
 	}  else {
-		$sql = "INSERT INTO cart(product_id, quantity)
-				VALUES('$product_id',1)";
+		$sql = "INSERT INTO cart(product_id, quantity) VALUES('$product_id',1)";
 		mysqli_query($conn, $sql);
        if(mysqli_affected_rows($conn)>0){
 		  return true;

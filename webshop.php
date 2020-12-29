@@ -19,7 +19,7 @@
       // $products = get_all_products($page);
   }
 
-  $images_page = get_all_products($page, $keyword);
+  $images_page = get_all_disabled_products($page, $keyword);
   $next_page=$page+1;
   $back_page=$page-1;
   $sum_page=$images_page->get_sum_page();

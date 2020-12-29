@@ -54,7 +54,7 @@
     <div class="col-xl-5"> <!-- Start of Right side-->
      
       <div class="row" style="padding:25px;">
-      <img src="images/text.jpgg" style="border-top-right-radius:15%; border-bottom-left-radius:15%; width:92%; margin-right:auto; margin-left:auto;">
+      <img src="images/text.jpg" style="border-top-right-radius:15%; border-bottom-left-radius:15%; width:92%; margin-right:auto; margin-left:auto;">
       </div>
 
     </div>

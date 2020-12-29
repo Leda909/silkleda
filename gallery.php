@@ -8,7 +8,7 @@
       } else{
          $page=1;
       }
-   $images_page = get_all_gallery($page);
+   $images_page = get_all_products($page);
    $next_page=$page+1;
    $back_page=$page-1;
    $sum_page=$images_page->get_sum_page();
