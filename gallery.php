@@ -4,21 +4,21 @@
 ?>
 
 <!-- Page Content -->
-<div class="bodybox container" style="margin-top: 17px; height: auto;" >
+<div class="container bodybox" style="margin-top: 20px; min-height: 1200px;" >
      
       <div class="portfolio-menu mt-2 mb-4">
          <ul>
             <li class="btn btn-outline-dark active" data-filter="*">All</li>
-            <!-- Nem kell pont a mandala és painting elött -->
-            <li class="btn btn-outline-dark" data-filter=".Mandala">Mandala</li>
-            <li class="btn btn-outline-dark" data-filter=".Picture">Painting</li>
+            <li class="btn btn-outline-dark" data-filter="Mandala">Mandala</li>
+            <li class="btn btn-outline-dark" data-filter="Picture">Painting</li>
+            <li class="btn btn-outline-dark" data-filter="Sewn silk product">Sewn</li>
          </ul>
 
-         <ul id="demo"> <!-- Pagination controller -->
+         <ul id="demo">
          </ul>
       </div>
 
-      <div class="portfolio-item"> <!-- for loop for call back function from custom_gallery.js-->
+      <div class="portfolio-item">
          <div class="data-container row">
          </div>
       </div>
