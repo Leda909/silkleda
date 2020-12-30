@@ -28,17 +28,15 @@
 </footer>
   
 
-
   <!-- Bootstrap core JavaScript -->
 
   <script src="js/jquery.min.js"></script>
   <script src="js/isotope.pkgd.js"></script>
   <script src="js/jquery.magnific-popup.js"></script>
   <script src="js/bootstrap.js"></script>
-  <script src="js/custom_gallery.js"></script>
   <script src="js/bootstrap.bundle.js"></script>
   <script scr="js/pagination.js"></script>
-
+  <script src="js/custom_gallery.js"></script>
 
 </body>
 
