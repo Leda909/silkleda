@@ -2,7 +2,7 @@
 include_once "config.php";
 include_once "pagination_class.php";
 
-# Here we fetch from "Product" table to webshop page.
+# Here we fetch disabled from "Product" table to webshop page.
 function get_all_disabled_products($page, $keyword){
 
       global $conn;
@@ -34,11 +34,10 @@ function get_all_disabled_products($page, $keyword){
         } else {
             return false;
         }
-
 }
 
 
-# Here we fetch from "Product" table to "Single product page"
+# Here we fetch disabled from "Product" table to "Single product page"
 function get_product_by_id($product_id){
 
     global $conn;
@@ -56,43 +55,28 @@ function get_product_by_id($product_id){
         return false;
     }  
 }
-
-# Here we fetch from "Gallery" table.
-
-function get_all_products($page){
-
+          
+# Here we fetch from "Product" table for Gallery page
+function get_all_products(){
 
     global $conn;
     $sql = "SELECT * FROM product";
 
     $result = mysqli_query($conn, $sql);
 
-
     $galleries = [];
 
     if(mysqli_num_rows($result)> 0){
 
-		$index=0;
         while($row = mysqli_fetch_assoc($result)){
-			// if($index>8){
-			// 	break;
-			// }
-			if($index<8*$page && $index>=8*($page-1)){
-				array_push($galleries, $row);
-			}
-				$index++;
-		}
-		$gallery_page = new Pagination();
-		$gallery_page->set_images($galleries);
-		$gallery_page->set_current_page($page);
-		$gallery_page->set_sum_page(ceil($index/8));
-        return $gallery_page;
+                 array_push($galleries, $row);
+        }
+        return $galleries;
 
     } else {
         return false;
     }
 }
-
 
 # -----------------------FETCH CART TABLE----------------------------#
 # If record for the product found in the database then 
